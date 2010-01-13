@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load i18n %}
+{% get_current_language as language %}
+<html lang="{{ language }}">
+
+
+<title>{% trans "Get to work|play" %}</title>
+
+<h1>{% trans "Get to work" %}</h1>
+
+{% blocktrans %}
+<p>Or play, depending on how you look at it.</p>
+
+<p>In either case you should build your own template.
+After all, this is <em>your</em> portfolio.</p>
+{% endblocktrans %}
