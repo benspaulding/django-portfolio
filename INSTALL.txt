@@ -1,0 +1,11 @@
+=========================
+Installation instructions
+=========================
+
+There is currently only one way to install this application for 
+use by your projects. It is to do a Subversion checkout into a 
+directory that's on your Python path::
+
+    svn co https://code.benspaulding.com/svn/apps/portfolio/trunk/portfolio/
+
+A packaged version will be available for download in the near future.
