@@ -1,6 +1,6 @@
-===================================
- Web Worker's Portfolio for Django
-===================================
+======================================
+ Portoflio Management for Web Workers
+======================================
 
 |Build status|_
 
@@ -22,7 +22,7 @@ Requirements
 TODO
 ----
 
-1. Write tests.
+1. Write admin action tests.
 2. Add initial South migration.
 3. Fix non-deterministic ordering issue on objects with nullable dates.
 4. Add search index for Haystack.

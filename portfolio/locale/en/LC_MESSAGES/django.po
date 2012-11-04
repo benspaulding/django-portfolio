@@ -1,14 +1,15 @@
 # English "translation" for the django-portfolio project.
-# Copyright (C) 2010, Ben Spaulding.
+# Copyright (C) 2012, Ben Spaulding.
 # This file is distributed under the same license as the django-portfolio package.
-# Ben Spaulding <ben@benspaulding.com>, 2010.
+# Ben Spaulding <ben@benspaulding.us>, 2012.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: django-portfolio 0.8.0\n"
+"Project-Id-Version: django-portfolio\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-01-13 00:03-0600\n"
+"POT-Creation-Date: 2012-11-04 15:56-0600\n"
 "PO-Revision-Date: 2010-01-13 00:03-0600\n"
+"Last-Translator: Ben Spaulding <ben@benspaulding.us>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,111 +65,111 @@ msgstr ""
 msgid "removed"
 msgstr ""
 
-#: models.py:61
+#: models.py:54
 msgid "name"
 msgstr ""
 
-#: models.py:62
+#: models.py:55
 msgid "slug"
 msgstr ""
 
-#: models.py:80
+#: models.py:78
 msgid "URL"
 msgstr ""
 
-#: models.py:83 models.py:89 models.py:135
+#: models.py:81 models.py:87 models.py:133
 msgid "client"
 msgstr ""
 
-#: models.py:84
+#: models.py:82
 msgid "clients"
 msgstr ""
 
-#: models.py:91
+#: models.py:89
 msgid "witness"
 msgstr ""
 
-#: models.py:92
+#: models.py:90
 msgid "witness' position"
 msgstr ""
 
-#: models.py:93
+#: models.py:91
 msgid "Describe their position or relationship."
 msgstr ""
 
-#: models.py:94
+#: models.py:92
 msgid "date"
 msgstr ""
 
-#: models.py:95 models.py:102
+#: models.py:93 models.py:100
 msgid "testimonial"
 msgstr ""
 
-#: models.py:96 models.py:146
+#: models.py:94 models.py:144
 msgid "status"
 msgstr ""
 
-#: models.py:103
+#: models.py:101
 msgid "testimonials"
 msgstr ""
 
-#: models.py:113
+#: models.py:111
 msgid "medium"
 msgstr ""
 
-#: models.py:114 models.py:142
+#: models.py:112 models.py:140
 msgid "media"
 msgstr ""
 
-#: models.py:121
+#: models.py:119
 msgid "discipline"
 msgstr ""
 
-#: models.py:122 models.py:145
+#: models.py:120 models.py:143
 msgid "disciplines"
 msgstr ""
 
-#: models.py:128
+#: models.py:126
 msgid "project URL"
 msgstr ""
 
-#: models.py:129
+#: models.py:127
 msgid "completion date"
 msgstr ""
 
-#: models.py:131
+#: models.py:129
 msgid "is ongoing"
 msgstr ""
 
-#: models.py:133
+#: models.py:131
 msgid "summary"
 msgstr ""
 
-#: models.py:134
+#: models.py:132
 msgid "description"
 msgstr ""
 
-#: models.py:137
+#: models.py:135
 msgid "overview image"
 msgstr ""
 
-#: models.py:139
+#: models.py:137
 msgid "detail image"
 msgstr ""
 
-#: models.py:153
+#: models.py:156
 msgid "project"
 msgstr ""
 
-#: models.py:154
+#: models.py:157
 msgid "projects"
 msgstr ""
 
-#: models.py:160
+#: models.py:165
 msgid "is complete"
 msgstr ""
 
-#: models.py:166
+#: models.py:171
 msgid "in development"
 msgstr ""
 
@@ -176,15 +177,16 @@ msgstr ""
 msgid "Get to work|play"
 msgstr ""
 
-#: templates/portfolio/project_list.html:9
+#: templates/portfolio/project_list.html:10
 msgid "Get to work"
 msgstr ""
 
-#: templates/portfolio/project_list.html:11
+#: templates/portfolio/project_list.html:12
 msgid ""
 "\n"
-"<p>Or play, depending on how you look at it.</p>\n"
+"    <p>Or play, depending on how you look at it.</p>\n"
 "\n"
-"<p>In either case you should build your own template.\n"
-"After all, this is <em>your</em> portfolio.</p>\n"
+"    <p>In either case you should build your own template.\n"
+"    After all, this is <em>your</em> portfolio.</p>\n"
+"    "
 msgstr ""
