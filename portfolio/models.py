@@ -153,6 +153,8 @@ class Project(PortfolioBase):
 
     def is_complete(self):
         """Returns True if completion date is earlier than current time."""
+        if not self.completion_date:
+            return False
         return self.completion_date <= timezone.datetime.date(timezone.now())
     is_complete.boolean = True
     is_complete.short_description = _(u'is complete')
