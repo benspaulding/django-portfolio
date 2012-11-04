@@ -1,1 +1,2 @@
-from portfolio.tests.models import *
+# from .admin import *
+from .models import *

@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
-from portfolio import constants
+from .constants import STATUS_CHOICES, DRAFTED, PUBLISHED, REMOVED
 
 
 # Helper functions
@@ -22,9 +22,9 @@ class StatusField(models.PositiveSmallIntegerField):
     """Model field for the pubishing status of an object."""
 
     def __init__(self, *args, **kwargs):
-        kwargs['choices'] = kwargs.get('choices', constants.STATUS_CHOICES)
+        kwargs['choices'] = kwargs.get('choices', STATUS_CHOICES)
         kwargs['db_index'] = kwargs.get('db_index', True)
-        kwargs['default'] = kwargs.get('default', constants.DRAFTED)
+        kwargs['default'] = kwargs.get('default', DRAFTED)
         models.PositiveSmallIntegerField.__init__(self, *args, **kwargs)
 
 
@@ -35,15 +35,15 @@ class StatusManager(models.Manager):
 
     def drafted(self):
         """Return only objects which are drafted."""
-        return self.get_query_set().filter(status=constants.DRAFTED)
+        return self.get_query_set().filter(status=DRAFTED)
 
     def published(self):
         """Return only objects which are published."""
-        return self.get_query_set().filter(status=constants.PUBLISHED)
+        return self.get_query_set().filter(status=PUBLISHED)
 
     def removed(self):
         """Return only objects which are removed from publich view."""
-        return self.get_query_set().filter(status=constants.REMOVED)
+        return self.get_query_set().filter(status=REMOVED)
 
 
 # Models

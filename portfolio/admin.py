@@ -2,8 +2,8 @@ from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 from django.utils.translation import ugettext_noop, ungettext
 
-from portfolio import constants
-from portfolio.models import Client, Testimonial, Medium, Discipline, Project
+from .constants import STATUS_CHOICES, DRAFTED, PUBLISHED, REMOVED
+from .models import Client, Testimonial, Medium, Discipline, Project
 
 
 def update_status(modeladmin, request, queryset, status):
@@ -28,7 +28,7 @@ def update_status(modeladmin, request, queryset, status):
     message_dict = {
         'count': queryset.count(),
         'object': modeladmin.model._meta.verbose_name,
-        'verb': dict(constants.STATUS_CHOICES)[status],
+        'verb': dict(STATUS_CHOICES)[status],
     }
     if not message_dict['count'] == 1:
         message_dict['object'] = modeladmin.model._meta.verbose_name_plural
@@ -46,19 +46,19 @@ def update_status(modeladmin, request, queryset, status):
 
 def draft(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'drafted'."""
-    return update_status(modeladmin, request, queryset, constants.DRAFTED)
+    return update_status(modeladmin, request, queryset, DRAFTED)
 draft.short_description = _(u'Draft selected %(verbose_name_plural)s')
 
 
 def publish(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'published'."""
-    return update_status(modeladmin, request, queryset, constants.PUBLISHED)
+    return update_status(modeladmin, request, queryset, PUBLISHED)
 publish.short_description = _(u'Publish selected %(verbose_name_plural)s')
 
 
 def remove(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'removed'."""
-    return update_status(modeladmin, request, queryset, constants.REMOVED)
+    return update_status(modeladmin, request, queryset, REMOVED)
 remove.short_description = _(u'Remove selected %(verbose_name_plural)s')
 
 

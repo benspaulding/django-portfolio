@@ -1,7 +1,7 @@
 from django.conf.urls.defaults import *
 from django.views.generic.list import ListView
 
-from portfolio.models import Project
+from .models import Project
 
 
 urlpatterns = patterns('',
