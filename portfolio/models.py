@@ -1,6 +1,3 @@
-import re
-
-from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
@@ -14,8 +11,7 @@ def _get_upload_to_path(instance, filename):
     """
     Returns an upload path using the instance slug.
 
-    This function helps keep our file uploads organized.
-
+    This function keeps file uploads organized.
     """
     return "img/portfolio/%s/%s" % (instance.slug, filename)
 
@@ -35,10 +31,7 @@ class StatusField(models.PositiveSmallIntegerField):
 # Managers
 
 class StatusManager(models.Manager):
-    """
-    A manager for models with a `StatusField`.
-
-    """
+    """A manager for models with a `StatusField`."""
 
     def drafted(self):
         """Return only objects which are drafted."""
@@ -63,7 +56,7 @@ class PortfolioBase(models.Model):
 
     class Meta:
         abstract = True
-        ordering = ('name', )
+        ordering = ('name',)
 
     def __unicode__(self):
         return self.name
@@ -98,7 +91,7 @@ class Testimonial(models.Model):
     objects = StatusManager()
 
     class Meta:
-        ordering = ('-date', )
+        ordering = ('-date',)
         verbose_name = _(u'testimonial')
         verbose_name_plural = _(u'testimonials')
 
@@ -149,6 +142,11 @@ class Project(PortfolioBase):
 
     class Meta:
         get_latest_by = 'completion_date'
+        # FIXME: The ordering of these will be non-deterministic, because the
+        # ``completion_date`` is nullable. (Some DB's pile null dates at the
+        # end, some at the beginning. I did not know that when I originally
+        # wrote the app.) So, rework date handling and ordering to get
+        # a deterministic ordering.
         ordering = ('-completion_date', 'name')
         verbose_name = _(u'project')
         verbose_name_plural = _(u'projects')
