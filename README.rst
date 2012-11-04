@@ -15,7 +15,7 @@ an up-to-date portfolio. (But I have used this in the past.)
 Requirements
 ------------
 
-* Python_ 2.6 or newer
+* Python_ 2.5 or newer
 * Django_ 1.4 or newer
 * PIL_
 
