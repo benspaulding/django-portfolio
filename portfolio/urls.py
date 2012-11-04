@@ -1,14 +1,12 @@
 from django.conf.urls.defaults import *
-from django.views.generic.list_detail import object_list
+from django.views.generic.list import ListView
 
 from portfolio.models import Project
 
 
-info_dict = {
-    'queryset': Project.objects.published(),
-    'template_object_name': 'project',
-}
-
 urlpatterns = patterns('',
-    url(r'^$', object_list, info_dict, name='portfolio-project-list'),
+    url(r'^$',
+        ListView.as_view(context_object_name='project',
+                         queryset=Project.objects.published()),
+        name='portfolio-project-list'),
 )
