@@ -1,7 +1,8 @@
 from django.test import TestCase
 from django.utils import timezone
 
-from ..models import _get_upload_to_path, Project
+from ..constants import DRAFTED, PUBLISHED, REMOVED
+from ..models import _get_upload_to_path, PortfolioBase, Client, Project
 
 
 class PortfolioTestModel(PortfolioBase):
@@ -28,6 +29,40 @@ class PortfolioBaseTestCase(TestCase):
         self.assertRaises(NoReverseMatch, obj.get_absolute_url)
 
 
+class StatusManagerTestCase(TestCase):
+
+    def setUp(self):
+        self.proj_client = Client.objects.create(name=u'Proj Client',
+                                                 slug=u'proj-client')
+        self.draft_proj = Project.objects.create(name=u'Draft Proj',
+                                                 slug=u'draft-proj',
+                                                 status=DRAFTED,
+                                                 client=self.proj_client)
+        self.pub_proj = Project.objects.create(name=u'Published Proj',
+                                               slug=u'pub-proj',
+                                               status=PUBLISHED,
+                                               client=self.proj_client)
+        self.removed_proj = Project.objects.create(name=u'Removed Proj',
+                                                   slug=u'removed-proj',
+                                                   status=REMOVED,
+                                                   client=self.proj_client)
+
+    def test_drafted(self):
+        self.assertIn(self.draft_proj, Project.objects.drafted())
+        self.assertNotIn(self.pub_proj, Project.objects.drafted())
+        self.assertNotIn(self.removed_proj, Project.objects.drafted())
+
+    def test_published(self):
+        self.assertNotIn(self.draft_proj, Project.objects.published())
+        self.assertIn(self.pub_proj, Project.objects.published())
+        self.assertNotIn(self.removed_proj, Project.objects.published())
+
+    def test_removed(self):
+        self.assertNotIn(self.draft_proj, Project.objects.removed())
+        self.assertNotIn(self.pub_proj, Project.objects.removed())
+        self.assertIn(self.removed_proj, Project.objects.removed())
+
+
 class PortfolioTestCase(TestCase):
 
     def test_is_complete_past_date(self):
@@ -37,7 +72,8 @@ class PortfolioTestCase(TestCase):
 
     def test_is_complete_future_date(self):
         now = timezone.now()
-        future_date = timezone.datetime.date(timezone.datetime(now.year+1, now.month, now.day))
+        future_date = timezone.datetime.date(timezone.datetime(
+                                             now.year + 1, now.month, now.day))
         proj_incomplete = Project(completion_date=future_date)
         self.assertFalse(proj_incomplete.is_complete())
 
