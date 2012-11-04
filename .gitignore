@@ -1,2 +1,6 @@
-*.pyc
-build/*
+*.py[co]
+*.egg-info
+.DS_Store
+dist/
+build/
+MANIFEST
