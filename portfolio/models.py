@@ -61,6 +61,11 @@ class PortfolioBase(models.Model):
     def __unicode__(self):
         return self.name
 
+    # NOTE: I was trying to be Super Helpful (TM) when I wrote this, but it
+    # is silly. It adds a ``get_absolute_url`` method for all subclasses, even
+    # though not one of those has a detail view at this time. And it makes the
+    # assumption that the url will be named based on the class name. That is
+    # common, but not always the case. This stays for backward compatibility.
     @models.permalink
     def get_absolute_url(self):
         return ('portfolio-%s-detail' % self.__class__.__name__.lower(), (),
