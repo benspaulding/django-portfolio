@@ -1,0 +1,13 @@
+# After any modifications to this file, be sure to check it with
+# http://lint.travis-ci.org/
+
+language: python
+python:
+    - 2.7
+    - 2.6
+env:
+    - DJANGO_VERSION=1.4.2
+install:
+    - pip install --use-mirrors Django==$DJANGO_VERSION
+    - python setup.py -q install
+script: django-admin.py test portfolio --settings="portfolio.tests.settings"
