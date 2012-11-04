@@ -1,8 +1,8 @@
 import re
-from datetime import datetime
 
 from django.conf import settings
 from django.db import models
+from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 
 from portfolio import constants
@@ -155,7 +155,7 @@ class Project(PortfolioBase):
 
     def is_complete(self):
         """Returns True if completion date is earlier than current time."""
-        return self.completion_date <= datetime.date(datetime.now())
+        return self.completion_date <= timezone.datetime.date(timezone.now())
     is_complete.boolean = True
     is_complete.short_description = _(u'is complete')
 
