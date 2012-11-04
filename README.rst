@@ -1,5 +1,5 @@
 ===================================
- Web Worker’s Portfolio for Django
+ Web Worker's Portfolio for Django
 ===================================
 
 |Build status|_
