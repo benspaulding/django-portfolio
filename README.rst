@@ -24,9 +24,8 @@ TODO
 
 1. Add ``__version__`` to package/setup.py.
 2. Write admin action tests.
-3. Add initial South migration.
-4. Fix non-deterministic ordering issue on objects with nullable dates.
-5. Add search index for Haystack.
+3. Fix non-deterministic ordering issue on objects with nullable dates.
+4. Add search index for Haystack.
 
 .. _Python: http://www.python.org/
 .. _Django: http://www.djangoproject.com/

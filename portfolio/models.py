@@ -17,6 +17,15 @@ def _get_upload_to_path(instance, filename):
 
 
 # Fields
+# South migrations are provided, and thus an introspection rule for the
+# StatusField. But South is an option, not a requirement, so a try/except is
+# necessary.
+try:
+    from south.modelsinspector import add_introspection_rules
+    add_introspection_rules([], ['^portfolio\.models\.StatusField'])
+except ImportError:
+    pass
+
 
 class StatusField(models.PositiveSmallIntegerField):
     """Model field for the pubishing status of an object."""
