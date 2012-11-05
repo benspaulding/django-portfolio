@@ -23,9 +23,11 @@ TODO
 ----
 
 1. Add ``__version__`` to package/setup.py.
-2. Write admin action tests.
+2. Add ability for multiple images per project. Likely something like a
+   new model and relation that would allow for arbitrary numbers or images.
 3. Fix non-deterministic ordering issue on objects with nullable dates.
 4. Add search index for Haystack.
+5. Write admin action tests.
 
 .. _Python: http://www.python.org/
 .. _Django: http://www.djangoproject.com/
