@@ -1,5 +1,11 @@
 import os
-from distutils.core import setup
+
+try:
+    from setuptools import setup
+except ImportError:
+    from ez_setup import use_setuptools
+    use_setuptools()
+    from setuptools import setup
 
 
 def read(fname):
@@ -7,13 +13,13 @@ def read(fname):
 
 setup(
     name='django-portfolio',
-    version='0.8.1',
+    version='0.9.0',
     description='Portfolio management for web workers.',
     url='https://github.com/benspaulding/django-portfolio/',
     author='Ben Spaulding',
     author_email='ben@benspaulding.us',
     license='BSD',
-    download_url='http://github.com/benspaulding/django-portfolio/tarball/v0.8.1',
+    download_url='http://github.com/benspaulding/django-portfolio/tarball/v0.9.0',
     long_description=read('README.rst'),
     packages=['portfolio', 'portfolio.tests'],
     package_data={
@@ -22,6 +28,12 @@ setup(
             'templates/portfolio/*',
         ],
     },
+    install_requires=[
+        'Django>=1.4,<1.5',
+        # FIXME: How does one do an or?
+        # 'PIL',  # or
+        # 'Pillow',
+    ],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
@@ -29,7 +41,7 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python',
+        'Programming Language :: Python :: 2.7',
         'Topic :: Internet :: WWW/HTTP :: Site Management',
     ],
 )
