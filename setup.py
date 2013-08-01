@@ -30,9 +30,7 @@ setup(
     },
     install_requires=[
         'Django>=1.4.2,<1.6',
-        # FIXME: How does one do an or?
-        # 'PIL',  # or
-        # 'Pillow',
+        'Pillow',
     ],
     classifiers=[
         'Development Status :: 4 - Beta',

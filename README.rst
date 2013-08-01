@@ -17,7 +17,7 @@ Requirements
 
 * Python_ 2.7 or 3.3
 * Django_ 1.4.2 or 1.5
-* Pillow_ (or PIL_)
+* Pillow_
 
 TODO
 ----
@@ -31,5 +31,4 @@ TODO
 
 .. _Python: http://www.python.org/
 .. _Django: http://www.djangoproject.com/
-.. _Pillow: https://pypi.python.org/pypi/Pillow/
 .. _PIL: http://www.pythonware.com/products/pil/

@@ -10,6 +10,5 @@ env:
     - DJANGO_VERSION=1.4.5
 install:
     - pip install --use-mirrors Django==$DJANGO_VERSION
-    - pip install PIL
     - python setup.py -q install
 script: django-admin.py test portfolio --settings="portfolio.tests.settings"
