@@ -22,7 +22,7 @@ def update_status(modeladmin, request, queryset, status):
         obj.save()
         # Now log what happened.
         # Use ugettext_noop() 'cause this is going straight into the db.
-        log_message = ugettext_noop(u'Changed status to \'%s\'.' %
+        log_message = ugettext_noop('Changed status to \'%s\'.' %
             obj.get_status_display())
         modeladmin.log_change(request, obj, log_message)
 
@@ -35,8 +35,8 @@ def update_status(modeladmin, request, queryset, status):
     if not message_dict['count'] == 1:
         message_dict['object'] = modeladmin.model._meta.verbose_name_plural
     user_message = ungettext(
-        u'%(count)s %(object)s was successfully %(verb)s.',
-        u'%(count)s  %(object)s were successfully %(verb)s.',
+        '%(count)s %(object)s was successfully %(verb)s.',
+        '%(count)s  %(object)s were successfully %(verb)s.',
         message_dict['count']) % message_dict
     modeladmin.message_user(request, user_message)
 
@@ -49,19 +49,19 @@ def update_status(modeladmin, request, queryset, status):
 def draft(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'drafted'."""
     return update_status(modeladmin, request, queryset, DRAFTED)
-draft.short_description = _(u'Draft selected %(verbose_name_plural)s')
+draft.short_description = _('Draft selected %(verbose_name_plural)s')
 
 
 def publish(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'published'."""
     return update_status(modeladmin, request, queryset, PUBLISHED)
-publish.short_description = _(u'Publish selected %(verbose_name_plural)s')
+publish.short_description = _('Publish selected %(verbose_name_plural)s')
 
 
 def remove(modeladmin, request, queryset):
     """Admin action for setting status of selected items to 'removed'."""
     return update_status(modeladmin, request, queryset, REMOVED)
-remove.short_description = _(u'Remove selected %(verbose_name_plural)s')
+remove.short_description = _('Remove selected %(verbose_name_plural)s')
 
 
 class TestimonialInline(admin.StackedInline):
@@ -91,9 +91,9 @@ class ProjectAdmin(PortfolioBaseAdmin):
     fieldsets = (
         (None, {'fields': ('name', 'slug', 'client', 'project_url',
             ('completion_date', 'is_ongoing'), 'status')}),
-        (_(u'Content'), {'fields': ('summary', 'description', 'overview_image',
+        (_('Content'), {'fields': ('summary', 'description', 'overview_image',
             'detail_image')}),
-        (_(u'Categorization'), {'fields': ('media', 'disciplines')}),
+        (_('Categorization'), {'fields': ('media', 'disciplines')}),
     )
     filter_horizontal = ('disciplines', )
     list_display = ('name', 'client', 'completion_date', 'status',

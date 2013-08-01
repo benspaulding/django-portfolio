@@ -4,6 +4,6 @@ from __future__ import unicode_literals
 # when setup imports version before Django is installed.
 try:
     from django.utils.translation import ugettext_lazy as _
-    _(u'portfolio')
+    _('portfolio')
 except ImportError:
     pass

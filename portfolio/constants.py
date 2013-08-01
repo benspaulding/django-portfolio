@@ -9,7 +9,7 @@ PUBLISHED = 2
 REMOVED = 3
 
 STATUS_CHOICES = (
-    (DRAFTED, _(u'drafted')),
-    (PUBLISHED, _(u'published')),
-    (REMOVED, _(u'removed')),
+    (DRAFTED, _('drafted')),
+    (PUBLISHED, _('published')),
+    (REMOVED, _('removed')),
 )

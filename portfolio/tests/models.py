@@ -17,7 +17,7 @@ class PortfolioTestModel(PortfolioBase):
 class MediaFuncTestCase(TestCase):
 
     def test_project_file(self):
-        project = Project(name=u'Proj 1', slug=u'proj-1')
+        project = Project(name='Proj 1', slug='proj-1')
         filepath = _get_upload_to_path(project, 'foo.png')
         self.assertEqual(filepath, 'img/portfolio/proj-1/foo.png')
 
@@ -27,25 +27,25 @@ class PortfolioBaseTestCase(TestCase):
     def test_get_absolute_url(self):
         """An odd test case, but necessary to verify current behavior."""
         from django.core.urlresolvers import NoReverseMatch
-        obj = PortfolioTestModel(name=u'Foo', slug=u'foo')
+        obj = PortfolioTestModel(name='Foo', slug='foo')
         self.assertRaises(NoReverseMatch, obj.get_absolute_url)
 
 
 class StatusManagerTestCase(TestCase):
 
     def setUp(self):
-        self.proj_client = Client.objects.create(name=u'Proj Client',
-                                                 slug=u'proj-client')
-        self.draft_proj = Project.objects.create(name=u'Draft Proj',
-                                                 slug=u'draft-proj',
+        self.proj_client = Client.objects.create(name='Proj Client',
+                                                 slug='proj-client')
+        self.draft_proj = Project.objects.create(name='Draft Proj',
+                                                 slug='draft-proj',
                                                  status=DRAFTED,
                                                  client=self.proj_client)
-        self.pub_proj = Project.objects.create(name=u'Published Proj',
-                                               slug=u'pub-proj',
+        self.pub_proj = Project.objects.create(name='Published Proj',
+                                               slug='pub-proj',
                                                status=PUBLISHED,
                                                client=self.proj_client)
-        self.removed_proj = Project.objects.create(name=u'Removed Proj',
-                                                   slug=u'removed-proj',
+        self.removed_proj = Project.objects.create(name='Removed Proj',
+                                                   slug='removed-proj',
                                                    status=REMOVED,
                                                    client=self.proj_client)
 
