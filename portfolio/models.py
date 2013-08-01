@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils import timezone
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.translation import ugettext_lazy as _
 
 from .constants import STATUS_CHOICES, DRAFTED, PUBLISHED, REMOVED
@@ -61,6 +62,7 @@ class StatusManager(models.Manager):
 
 # Models
 
+@python_2_unicode_compatible
 class PortfolioBase(models.Model):
     """Base class with fields and methods common to all Portfolio models."""
 
@@ -71,7 +73,7 @@ class PortfolioBase(models.Model):
         abstract = True
         ordering = ('name',)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     # NOTE: I was trying to be Super Helpful (TM) when I wrote this, but it
@@ -112,7 +114,7 @@ class Testimonial(models.Model):
         verbose_name = _('testimonial')
         verbose_name_plural = _('testimonials')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.witness
 
 
