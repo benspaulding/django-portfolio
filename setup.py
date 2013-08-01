@@ -29,7 +29,7 @@ setup(
         ],
     },
     install_requires=[
-        'Django>=1.4,<1.6',
+        'Django>=1.4.2,<1.6',
         # FIXME: How does one do an or?
         # 'PIL',  # or
         # 'Pillow',
@@ -42,6 +42,7 @@ setup(
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.3',
         'Topic :: Internet :: WWW/HTTP :: Site Management',
     ],
 )

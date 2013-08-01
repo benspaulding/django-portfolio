@@ -15,8 +15,8 @@ an up-to-date portfolio. (But I have used this in the past.)
 Requirements
 ------------
 
-* Python_ 2.7
-* Django_ 1.4 or 1.5
+* Python_ 2.7 or 3.3
+* Django_ 1.4.2 or 1.5
 * Pillow_ (or PIL_)
 
 TODO
@@ -28,7 +28,6 @@ TODO
 3. Fix non-deterministic ordering issue on objects with nullable dates.
 4. Add search index for Haystack.
 5. Write admin action tests.
-7. Add official support for Python 3.3.
 
 .. _Python: http://www.python.org/
 .. _Django: http://www.djangoproject.com/
