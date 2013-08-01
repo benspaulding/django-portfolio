@@ -28,6 +28,7 @@ TODO
 3. Fix non-deterministic ordering issue on objects with nullable dates.
 4. Add search index for Haystack.
 5. Write admin action tests.
+6. List on PyPI.
 
 .. _Python: http://www.python.org/
 .. _Django: http://www.djangoproject.com/
