@@ -31,4 +31,4 @@ TODO
 
 .. _Python: http://www.python.org/
 .. _Django: http://www.djangoproject.com/
-.. _PIL: http://www.pythonware.com/products/pil/
+.. _Pillow: https://pypi.python.org/pypi/Pillow/
