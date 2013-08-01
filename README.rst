@@ -30,7 +30,6 @@ TODO
 5. Write admin action tests.
 6. Add official support for Django 1.5.
 7. Add official support for Python 3.3.
-8. Add tox testing.
 
 .. _Python: http://www.python.org/
 .. _Django: http://www.djangoproject.com/
