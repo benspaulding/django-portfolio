@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse
 from django.db import models
 from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
@@ -75,10 +76,9 @@ class PortfolioBase(models.Model):
     # though not one of those has a detail view at this time. And it makes the
     # assumption that the url will be named based on the class name. That is
     # common, but not always the case. This stays for backward compatibility.
-    @models.permalink
     def get_absolute_url(self):
-        return ('portfolio-%s-detail' % self.__class__.__name__.lower(), (),
-            {'slug': self.slug})
+        return reverse('portfolio-%s-detail' % self.__class__.__name__.lower(),
+            args=(), kwargs={'slug': self.slug})
 
 
 class Client(PortfolioBase):
