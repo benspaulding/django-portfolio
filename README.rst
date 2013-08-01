@@ -16,7 +16,7 @@ Requirements
 ------------
 
 * Python_ 2.7
-* Django_ 1.4
+* Django_ 1.4 or 1.5
 * Pillow_ (or PIL_)
 
 TODO
@@ -28,7 +28,6 @@ TODO
 3. Fix non-deterministic ordering issue on objects with nullable dates.
 4. Add search index for Haystack.
 5. Write admin action tests.
-6. Add official support for Django 1.5.
 7. Add official support for Python 3.3.
 
 .. _Python: http://www.python.org/

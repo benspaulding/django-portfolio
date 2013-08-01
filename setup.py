@@ -29,7 +29,7 @@ setup(
         ],
     },
     install_requires=[
-        'Django>=1.4,<1.5',
+        'Django>=1.4,<1.6',
         # FIXME: How does one do an or?
         # 'PIL',  # or
         # 'Pillow',
