@@ -13,13 +13,13 @@ def read(fname):
 
 setup(
     name='django-portfolio',
-    version='0.9.1',
+    version='0.9.2',
     description='Portfolio management for web workers.',
     url='https://github.com/benspaulding/django-portfolio/',
     author='Ben Spaulding',
     author_email='ben@benspaulding.us',
     license='BSD',
-    download_url='http://github.com/benspaulding/django-portfolio/tarball/v0.9.1',
+    download_url='http://github.com/benspaulding/django-portfolio/tarball/v0.9.2',
     long_description=read('README.rst'),
     packages=['portfolio', 'portfolio.tests'],
     package_data={
